@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ATM interface</title>
+  <link rel='stylesheet' type='text/css' href='/app.css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+<body>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+  <script src="/app.js"></script>
+  <img class='logo' src='/lacaixa-logo.png' alt='' />
+  <div id='things'>
+    <div class='operation-text' id='text-op-1' style='display: none;' >
+      <h1>Recibido correctamente:</h1>
+      <h2>
+        Extraer <span class="money">20 euros</span></br>
+        de la cuenta <span class="account">xxxxxxxxxxxxxxxx8556</span></br>
+        <span class="options">sin comprobante</span></h2>
+      <button type="button" class="btn btn-default ok-button">Volver al inicio</button>
+    </div>
+    <div class='operation-text' id='text-op-2' style='display: none;' >
+      <h1>Recibido correctamente:</h1>
+      <h2>
+        Extraer <span class="money">50 euros</span></br>
+        de la cuenta <span class="account">xxxxxxxxxxxxxxxx8556</span></br>
+        <span class="options">con comprobante</span></h2>
+      <button type="button" class="btn btn-default ok-button">Volver al inicio</button>
+    </div>
+    <div class='operation-text' id='text-op-3' style='display: none;' >
+      <h1>Recibido correctamente:</h1>
+      <h2>
+        Imprimir <span class="money">movimientos</span></br>
+        de la cuenta <span class="account">xxxxxxxxxxxxxxxx8556</span></br>
+      </h2>
+      <button type="button" class="btn btn-default ok-button">Volver al inicio</button>
+    </div>
+    <div id='qr-code-img-1' style="display: none;" class='qr-code-img'>
+      <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://finapps-atm.herokuapp.com/emit/x-20-nocomp-ok&amp;size=100x100;charset=UTF-8" alt=""/>
+    </div>
+    <div id='qr-code-img-2' style="display: none;" class='qr-code-img'>
+      <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://finapps-atm.herokuapp.com/emit/x-50-comp-ok&amp;size=100x100;charset=UTF-8" alt=""/>
+    </div>
+    <div id='qr-code-img-3' style="display: none;" class='qr-code-img'>
+      <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://finapps-atm.herokuapp.com/emit/imp-mov-ok&amp;size=100x100;charset=UTF-8" alt=""/>
+    </div>
+    <div id='qr-code-button'>
+      <button type="button" class="btn btn-primary" id='qr-button'>Mostrar codigo QR para Google Glass</button>
+    </div>
+    <div id='messageText'></div>
+  </div>
+</body>
+</html>
